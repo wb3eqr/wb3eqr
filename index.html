@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kostya — wb3eqr · 15 · Vibe Coder</title>
+<meta name="description" content="Костя aka wb3eqr — 15 лет, 5 лет кода. Python · C++ · C# · MySQL · AI 2 года. Делаю для души, чисто и четко.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='26' fill='black'/><text x='50' y='66' font-size='38' text-anchor='middle' fill='white' font-family='monospace'>k</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],serif:['Instrument Serif','serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+<style>
+:root{--glass-opacity:.07;--glass-blur:28px;--glass-border:.1;--bg:#060607;--text:#FBFBFC;--muted:#A1A1AA;--line:rgba(255,255,255,.08);}
+html.light{--bg:#F6F6F4;--text:#09090B;--muted:#71717A;--line:rgba(0,0,0,.08);}
+*{ -webkit-font-smoothing:antialiased; } html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;overflow-x:hidden;transition:background .5s,color .5s;}
+.glass{position:relative;background:linear-gradient(180deg,rgba(255,255,255,calc(var(--glass-opacity) + .04)),rgba(255,255,255,var(--glass-opacity)));backdrop-filter:blur(var(--glass-blur)) saturate(1.6) brightness(1.05);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.6) brightness(1.05);border:1px solid rgba(255,255,255,var(--glass-border));box-shadow:0 8px 32px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.12);}
+html.light .glass{background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.7));border-color:rgba(0,0,0,.07);box-shadow:0 12px 40px rgba(0,0,0,.07),inset 0 1px 0 #fff;}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.14),transparent 20%);opacity:.7;}
+.no-blur .glass{backdrop-filter:none;-webkit-backdrop-filter:none;} .no-motion *{transition:none!important;animation:none!important;}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,40px) scale(1.08)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,-30px) scale(1.12)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}50%{box-shadow:0 0 0 6px rgba(52,211,153,0)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes bootbar{from{width:0}to{width:100%}}
+@keyframes glitch1{0%,100%{clip-path:inset(0 0 0 0);transform:none}20%{clip-path:inset(10% 0 60% 0);transform:translate(-4px,2px)}40%{clip-path:inset(60% 0 10% 0);transform:translate(4px,-2px)}60%{clip-path:inset(30% 0 40% 0);transform:translate(-3px,1px)}}
+@keyframes partyhue{from{filter:hue-rotate(0)}to{filter:hue-rotate(360deg)}}
+@keyframes caret{0%,50%{opacity:1}51%,100%{opacity:0}}
+.orb1{animation:drift1 14s ease-in-out infinite}.orb2{animation:drift2 18s ease-in-out infinite}
+.grid-lines{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,black 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,black 30%,transparent 75%);}
+.noise::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");pointer-events:none;mix-blend-mode:overlay;border-radius:inherit;}
+.hero-title{font-size:clamp(54px,11vw,140px);line-height:.84;letter-spacing:-.05em;background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.55) 70%,rgba(255,255,255,.25));-webkit-background-clip:text;background-clip:text;color:transparent;}
+html.light .hero-title{background:linear-gradient(180deg,#09090B 20%,rgba(9,9,11,.6));-webkit-background-clip:text;background-clip:text;}
+.hero-title .it{font-style:italic;font-weight:400;} .shine{background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);background-size:200% 100%;-webkit-background-clip:text;animation:shimmer 6s linear infinite;}
+#island{transition:all .45s cubic-bezier(.32,.72,0,1);} #island.scrolled{transform:translateX(-50%) scale(.96);top:12px;}
+.spot{position:relative;overflow:hidden;} .spot::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .4s;pointer-events:none;background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.12),transparent 55%);} .spot:hover::after{opacity:1;}
+.tilt{transform-style:preserve-3d;transition:transform .35s cubic-bezier(.16,1,.3,1);} 
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);} .reveal.in{opacity:1;transform:none;}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}
+.range{-webkit-appearance:none;height:5px;border-radius:999px;background:linear-gradient(90deg,#fff var(--fill,30%),rgba(255,255,255,.15) var(--fill,30%));outline:none;}
+html.light .range{background:linear-gradient(90deg,#09090B var(--fill,30%),rgba(0,0,0,.12) var(--fill,30%));}
+.range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.35),0 0 0 6px rgba(255,255,255,.08);cursor:pointer;}
+html.light .range::-webkit-slider-thumb{background:#09090B;}
+.marquee-track{display:flex;width:max-content;animation:marquee 26s linear infinite;} .marquee-track:hover{animation-duration:8s;}
+.bar{height:6px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden;} html.light .bar{background:rgba(0,0,0,.08);}
+.bar>i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#fff,rgba(255,255,255,.5));width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1);} html.light .bar>i{background:#09090B;}
+.btn-primary{background:#fff;color:#000;transition:all .25s;box-shadow:0 8px 24px rgba(0,0,0,.3);} .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 6px rgba(255,255,255,.08),0 14px 32px rgba(0,0,0,.35);}
+html.light .btn-primary{background:#09090B;color:#fff;}
+.focus-ring:focus-visible{outline:2px solid var(--text);outline-offset:3px;}
+#cursorGlow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(255,255,255,.06),transparent 65%);transform:translate(-50%,-50%);left:-999px;top:-999px;filter:blur(10px);}
+.preset.active{background:#fff!important;color:#000!important;} html.light .preset.active{background:#09090B!important;color:#fff!important;}
+#boot{position:fixed;inset:0;z-index:100;background:#060607;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;transition:opacity .6s,visibility .6s;}
+#boot.done{opacity:0;visibility:hidden;}
+#progress{position:fixed;top:0;left:0;height:2px;background:#fff;z-index:80;width:0;box-shadow:0 0 12px rgba(255,255,255,.7);}
+html.light #progress{background:#09090B;}
+#dust{position:fixed;inset:0;z-index:2;pointer-events:none;}
+.type-caret::after{content:"▍";animation:caret 1s infinite;margin-left:2px;}
+.glitching{animation:glitch1 .35s steps(2) 3;}
+html.party body{animation:partyhue 4s linear infinite;}
+#matrix{position:fixed;inset:0;z-index:70;pointer-events:none;display:none;background:rgba(0,0,0,.85);}
+#matrix.on{display:block;}
+.floaty{animation:floaty 5s ease-in-out infinite;}
+.egg-dot{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.18);} .egg-dot.found{background:#34d399;box-shadow:0 0 8px rgba(52,211,153,.8);}
+.ripple{position:fixed;border-radius:50%;pointer-events:none;z-index:65;border:2px solid rgba(255,255,255,.6);transform:translate(-50%,-50%);animation:rip .6s ease-out forwards;}
+@keyframes rip{from{width:10px;height:10px;opacity:1}to{width:120px;height:120px;opacity:0}}
+.hint-kbd{font-family:'JetBrains Mono';font-size:10px;padding:2px 7px;border-radius:6px;border:1px solid var(--line);background:rgba(128,128,140,.12);}
+.social-btn{transition:all .2s;} .social-btn:hover{transform:translateY(-2px);filter:brightness(1.15);}
+/* ===== RESPONSIVE FIX 2026 — все устройства ===== */
+html,body{max-width:100%;overflow-x:clip;}
+img,svg,canvas,video{max-width:100%;}
+#island{max-width:min(940px,calc(100vw - 16px));will-change:transform,top;}
+#island>div{min-width:0;}
+#island a,#island button{min-height:40px;}
+#logoBtn,#island button{flex-shrink:0;}
+#clock{white-space:nowrap;}
+.hero-title{overflow-wrap:break-word;hyphens:none;}
+header .magnetic,header .glass{max-width:100%;}
+/* тач-цели */
+a,button,input,textarea{ -webkit-tap-highlight-color:transparent; }
+button,a.btn-primary{ touch-action:manipulation; }
+/* модалка / палитра / CC не вылезают */
+#modal>div{max-height:calc(100dvh - 40px);overflow:auto;}
+#palette>div{max-height:calc(100dvh - 60px);overflow:auto;}
+#cc{max-height:calc(100dvh - 90px);overflow:auto;padding-bottom:calc(1.25rem + env(safe-area-inset-bottom));}
+#toast{left:50% !important;transform:translateX(-50%) translateY(6rem) !important;}
+#toast:not(.translate-y-24){transform:translateX(-50%) translateY(0) !important;}
+/* safe-area */
+nav#island{top:max(12px,env(safe-area-inset-top));}
+#island.scrolled{top:max(8px,env(safe-area-inset-top));}
+/* fallback без backdrop-filter */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .glass{background:rgba(20,20,22,.92) !important;}
+  html.light .glass{background:rgba(255,255,255,.96) !important;}
+}
+/* маленькие экраны 360px */
+@media (max-width:420px){
+  #island{top:10px;}
+  #island .font-mono.tracking-\[\.2em\]{letter-spacing:.12em;}
+  .hero-title{font-size:clamp(46px,15.5vw,72px);}
+  header{padding-top:7.5rem;}
+  header .magnetic{width:100%;justify-content:center;}
+  #contact .grid{gap:12px;}
+  #termIn{font-size:16px;} /* без зума iOS */
+  input,textarea{font-size:16px !important;}
+  .marquee-track{animation-duration:18s;}
+  #cursorGlow{display:none !important;}
+  #dust{opacity:.7;}
+}
+/* планшеты */
+@media (min-width:421px) and (max-width:1023px){
+  #island{width:min(720px,calc(100% - 16px));}
+  .hero-title{font-size:clamp(64px,11vw,110px);}
+}
+/* десктоп — hover только с мышью */
+@media (hover:none){
+  .spot::after{display:none;}
+  .tilt{transform:none !important;}
+  .social-btn:hover,.btn-primary:hover{transform:none;}
+}
+/* landscape телефоны */
+@media (max-height:520px) and (orientation:landscape){
+  header{min-height:auto;padding-top:7rem;padding-bottom:2rem;}
+  #island{top:8px;}
+}
+/* reduce motion */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .orb1,.orb2,.floaty,.marquee-track,.shine{animation:none !important;}
+}
+</style>
+</head>
+<body class="selection:bg-white selection:text-black">
+<div id="boot">
+  <div class="w-16 h-16 rounded-[20px] bg-white text-black grid place-items-center font-mono text-sm tracking-widest floaty">k</div>
+  <div class="font-mono text-[12px] tracking-[.28em] uppercase opacity-70">kostya · wb3eqr</div>
+  <div class="w-[220px] h-[3px] rounded-full bg-white/10 overflow-hidden"><div class="h-full bg-white rounded-full" style="animation:bootbar 1.3s ease forwards"></div></div>
+  <div id="bootMsg" class="font-mono text-[11px] opacity-40">загружаю стек…</div>
+</div>
+<div id="progress"></div>
+<canvas id="dust"></canvas>
+<div id="cursorGlow" class="hidden md:block"></div>
+<div id="matrix"><canvas id="matrixCanvas" class="w-full h-full"></canvas></div>
+
+<div class="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
+  <div class="orb1 absolute -top-[25%] left-1/2 -translate-x-1/2 w-[1300px] h-[820px] rounded-full opacity-[.14]" style="background:radial-gradient(ellipse at center,#fff,transparent 68%);filter:blur(50px)"></div>
+  <div class="orb2 absolute top-[22%] -right-[12%] w-[640px] h-[640px] rounded-full opacity-[.09]" style="background:radial-gradient(circle,#A5B4FC,transparent 62%);filter:blur(30px)"></div>
+  <div class="orb1 absolute bottom-[4%] -left-[10%] w-[560px] h-[560px] rounded-full opacity-[.07]" style="background:radial-gradient(circle,#6EE7B7,transparent 62%);filter:blur(30px)"></div>
+  <div class="absolute inset-0 grid-lines opacity-60"></div>
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom,transparent,var(--bg) 82%)"></div>
+</div>
+
+<nav id="island" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[min(940px,calc(100%-16px))]">
+  <div class="glass rounded-[24px] px-2.5 py-2 flex items-center justify-between gap-2 min-w-0">
+    <div class="flex items-center gap-2.5 pl-1.5 min-w-0 shrink-1">
+      <div id="logoBtn" title="triple-click = matrix" class="w-10 h-10 rounded-2xl grid place-items-center font-mono text-[11px] font-medium shrink-0 cursor-pointer select-none" style="background:var(--text);color:var(--bg)">k</div>
+      <div class="leading-none min-w-0">
+        <div class="font-mono text-[11px] tracking-[.2em] uppercase font-medium flex items-center gap-2 whitespace-nowrap overflow-hidden text-ellipsis">kostya <span class="opacity-40">·</span> <span class="hidden min-[380px]:inline">wb3eqr</span>
+          <span class="hidden sm:flex items-center gap-1" id="eggDots"><span class="egg-dot"></span><span class="egg-dot"></span><span class="egg-dot"></span><span class="egg-dot"></span><span class="egg-dot"></span></span>
+        </div>
+        <div class="font-mono text-[10px] opacity-50 mt-1 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" style="animation:pulse-dot 2s infinite"></span><span id="clock">00:00 UTC</span><span class="opacity-30">· 15 лет</span></div>
+      </div>
+    </div>
+    <div class="hidden lg:flex items-center gap-0.5 rounded-full p-1" style="background:rgba(128,128,140,.15)">
+      <a href="#about" class="px-3.5 py-1.5 rounded-full text-[13px] font-medium hover:bg-white hover:text-black transition focus-ring">Обо мне</a>
+      <a href="#stack" class="px-3.5 py-1.5 rounded-full text-[13px] font-medium hover:bg-white hover:text-black transition focus-ring">Стек</a>
+      <a href="#terminal" class="px-3.5 py-1.5 rounded-full text-[13px] font-medium hover:bg-white hover:text-black transition focus-ring">Терминал_</a>
+      <a href="#contact" class="px-3.5 py-1.5 rounded-full text-[13px] font-medium hover:bg-white hover:text-black transition focus-ring">Связь</a>
+    </div>
+    <div class="flex items-center gap-2 pr-0.5 shrink-0">
+      <button onclick="togglePalette()" class="hidden md:inline-flex hint-kbd cursor-pointer hover:opacity-70 shrink-0">⌘K</button>
+      <a href="https://github.com/wb3eqr" target="_blank" rel="noopener" aria-label="GitHub wb3eqr" class="hidden sm:inline-flex items-center gap-2 glass rounded-full w-10 h-10 xl:w-auto xl:h-auto xl:px-4 xl:py-2 justify-center text-[12px] font-mono hover:brightness-125 transition focus-ring cursor-pointer shrink-0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5a9 9 0 0 0-2.85 17.55c.45.08.62-.19.62-.43v-1.54c-2.52.55-3.05-1.07-3.05-1.07-.41-1.05-1.01-1.33-1.01-1.33-.83-.57.06-.56.06-.56.92.06 1.41.95 1.41.95.82 1.4 2.14 1 2.67.76.08-.59.32-1 .58-1.23-2.02-.23-4.14-1.01-4.14-4.49 0-.99.35-1.8.93-2.44-.09-.23-.4-1.15.09-2.4 0 0 .76-.24 2.5.93a8.7 8.7 0 0 1 4.55 0c1.73-1.17 2.49-.93 2.49-.93.49 1.25.18 2.17.09 2.4.58.64.92 1.45.92 2.44 0 3.49-2.12 4.26-4.15 4.49.33.29.62.85.62 1.72v2.55c0 .24.16.52.62.43A9 9 0 0 0 12 2.5Z"/></svg>
+        <span class="hidden xl:inline">github.com/wb3eqr</span>
+      </a>
+      <button id="copyEmailNav" class="hidden xl:inline-flex items-center rounded-full px-4 py-2.5 text-[11px] font-mono btn-primary focus-ring cursor-pointer whitespace-nowrap shrink-0">hellomyworld@xyecoc.com</button>
+      <button onclick="toggleCC()" class="w-10 h-10 grid place-items-center rounded-2xl glass hover:brightness-150 transition focus-ring cursor-pointer" aria-label="settings">⚙</button>
+    </div>
+  </div>
+</nav>
+
+<header class="min-h-[100svh] flex flex-col items-center justify-center text-center px-5 pt-32 pb-12 relative" style="z-index:3">
+  <div class="max-w-5xl w-full reveal in">
+    <button onclick="glitchTitle()" class="inline-flex items-center gap-2.5 glass rounded-full pl-2 pr-4 py-1.5 font-mono text-[11px] tracking-[.14em] uppercase mb-7 cursor-pointer hover:brightness-125 focus-ring">
+      <span class="px-2.5 py-1 rounded-full text-[10px] font-medium" style="background:var(--text);color:var(--bg)">15</span>
+      Костя · 5 лет кода · чисто для души <span class="opacity-40 hidden sm:inline">· клик = глитч</span>
+    </button>
+    <h1 id="heroTitle" class="font-serif hero-title select-none">kostya<span class="opacity-30">.</span><span class="it shine">wb3eqr</span></h1>
+    <div class="flex items-center justify-center gap-3 mt-5">
+      <span class="h-px w-12 bg-gradient-to-r from-transparent to-white/60"></span>
+      <p class="font-mono text-[12px] tracking-[.2em] uppercase opacity-70 type-caret"><span id="role">Vibe Coder</span></p>
+      <span class="h-px w-12 bg-gradient-to-l from-transparent to-white/60"></span>
+    </div>
+    <p class="max-w-[640px] mx-auto text-[17px] sm:text-[19px] leading-[1.65] font-extralight mt-6" style="color:var(--muted)">
+      15 лет. Делаю всё сам — скрипты, софт, серверы. Не для галочки, а <span style="color:var(--text)" class="font-medium">для удовольствия.</span> Люблю, когда чётко, чисто и работает.
+    </p>
+    <div class="flex flex-wrap items-stretch justify-center gap-3 mt-9 max-w-[560px] mx-auto">
+      <a href="https://t.me/sell_program" target="_blank" rel="noopener" class="magnetic inline-flex items-center justify-center gap-2.5 rounded-full px-6 sm:px-7 py-4 text-[14px] font-semibold btn-primary focus-ring cursor-pointer flex-1 min-w-[220px] max-w-full">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 2a10 10 0 0 0-7.8 16.4L3 22l3.7-1.2A10 10 0 0 0 22 12 10 10 0 0 0 12 2Zm5.2 7.1-1.6 7.6s-.2.6-.7.3l-2.2-1.6-1.1 1s-.1.2-.3.2l.4-2.6 4.6-4.2s.4-.4 0-.6-.6.1-.6.1L9 14.3l-2.6-.8s-.4-.1-.4-.4.4-.3.4-.3l10-3.9s.4-.2.8.2c.2.3 0 .6 0 .6Z"/></svg>
+        <span class="truncate">@sell_program — написать</span>
+      </a>
+      <a href="#stack" class="glass inline-flex items-center justify-center rounded-full px-6 sm:px-7 py-4 text-[14px] font-medium hover:brightness-125 transition focus-ring cursor-pointer flex-1 min-w-[140px] max-w-full">Мой стек ↓</a>
+    </div>
+
+    <!-- quick socials — не налезают на 375px -->
+    <div class="flex flex-wrap justify-center gap-2 mt-7 max-w-[560px] mx-auto px-1">
+      <a href="https://t.me/hello_my_super_bio" target="_blank" class="social-btn glass rounded-full px-3 py-2 text-[11px] sm:text-xs font-mono focus-ring cursor-pointer">канал @hello_my_super_bio</a>
+      <a href="https://github.com/wb3eqr" target="_blank" class="social-btn glass rounded-full px-3 py-2 text-[11px] sm:text-xs font-mono focus-ring cursor-pointer">github/wb3eqr</a>
+      <span class="social-btn glass rounded-full px-3 py-2 text-[11px] sm:text-xs font-mono">discord ws3eqr_11211</span>
+      <span class="social-btn glass rounded-full px-3 py-2 text-[11px] sm:text-xs font-mono">steam 722286661</span>
+    </div>
+
+    <div class="grid grid-cols-3 max-w-[580px] mx-auto mt-10 pt-7" style="border-top:1px solid var(--line)">
+      <div><div class="font-serif text-[30px] leading-none"><span data-count="5">0</span> лет</div><div class="font-mono text-[10px] tracking-[.18em] uppercase opacity-50 mt-1.5">Кода</div></div>
+      <div style="border-left:1px solid var(--line);border-right:1px solid var(--line)"><div class="font-serif text-[30px] leading-none"><span data-count="2">0</span> года</div><div class="font-mono text-[10px] tracking-[.18em] uppercase opacity-50 mt-1.5">Нейросети</div></div>
+      <div><div class="font-serif text-[30px] leading-none">∞</div><div class="font-mono text-[10px] tracking-[.18em] uppercase opacity-50 mt-1.5">Желание делать</div></div>
+    </div>
+    <p class="font-mono text-[11px] opacity-30 mt-6">пасхалки: Konami ↑↑↓↓←→←→BA · набери eqr · тройной клик по «k» · кликни © 5 раз</p>
+  </div>
+  <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+    <span class="font-mono text-[10px] tracking-[.24em] uppercase">Scroll</span>
+    <div class="w-[26px] h-[42px] rounded-full grid place-items-start justify-center pt-2" style="border:1px solid var(--line)"><div class="w-1 h-2 rounded-full animate-bounce" style="background:var(--text)"></div></div>
+  </div>
+</header>
+
+<div class="overflow-hidden py-3 select-none relative" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);z-index:3">
+  <div class="marquee-track font-mono text-[12px] tracking-[.22em] uppercase opacity-60">
+    <div class="flex shrink-0 items-center"><span class="px-6">Python ✦</span><span class="px-6">C++ ✦</span><span class="px-6">C# ✦</span><span class="px-6">MySQL ✦</span><span class="px-6">Vibe-coding ✦</span><span class="px-6">wb3eqr ✦</span><span class="px-6">G — глитч ✦</span><span class="px-6">M — matrix ✦</span></div>
+    <div class="flex shrink-0 items-center" aria-hidden="true"><span class="px-6">Python ✦</span><span class="px-6">C++ ✦</span><span class="px-6">C# ✦</span><span class="px-6">MySQL ✦</span><span class="px-6">Vibe-coding ✦</span><span class="px-6">wb3eqr ✦</span><span class="px-6">G — глитч ✦</span><span class="px-6">M — matrix ✦</span></div>
+  </div>
+</div>
+
+<section id="about" class="px-5 py-14 max-w-[1180px] mx-auto scroll-mt-28 relative" style="z-index:3">
+  <div class="grid lg:grid-cols-12 gap-5">
+    <div class="lg:col-span-5 glass spot tilt rounded-[28px] p-8 sm:p-10 overflow-hidden noise reveal">
+      <div class="relative">
+        <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl grid place-items-center" style="background:var(--text);color:var(--bg)">◈</div><span class="font-mono text-[10px] tracking-[.2em] uppercase opacity-40">Kostya · 15 · wb3eqr</span></div>
+        <h2 class="font-serif text-[34px] leading-[.95] tracking-tight mt-6">Делаю<br><span class="italic opacity-70">для души,</span><br>а не для галочки</h2>
+        <p class="text-[15px] leading-relaxed mt-5" style="color:var(--muted)">Привет, я <span style="color:var(--text)" class="font-semibold">Костя</span>, 15 лет. В коде 5 лет — Python, C++, C#. Вайбкодю в сети, учусь сам, кайфую от процесса. Нейросети юзаю 2 года — не как игрушку, а как инструмент.</p>
+        <p class="text-[15px] leading-relaxed mt-3" style="color:var(--muted)">Был джуном и мидлом, тех-админом, MySQL-админом. Могу и систему поднять, и скрипт написать, и стекло на сайте навести — чтобы было <span style="color:var(--text)">чётко и чисто.</span></p>
+        <div class="grid grid-cols-2 gap-3 mt-7">
+          <div class="rounded-2xl p-4 floaty" style="background:rgba(128,128,140,.1);border:1px solid var(--line)"><div class="font-mono text-[11px] opacity-50">Стиль</div><div class="font-semibold text-[13px] mt-1">Чисто · Чётко · Премиум</div></div>
+          <div class="rounded-2xl p-4 floaty" style="background:rgba(128,128,140,.1);border:1px solid var(--line);animation-delay:-2.5s"><div class="font-mono text-[11px] opacity-50">Подход</div><div class="font-semibold text-[13px] mt-1">Сначала работает, потом блестит</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+      <div class="glass spot tilt rounded-[28px] p-7 reveal reveal-d1">
+        <div class="font-mono text-[11px] tracking-[.18em] uppercase opacity-50">Вайб</div>
+        <h3 class="font-semibold text-[17px] mt-2">Соло, но на уровне</h3>
+        <p class="text-sm mt-2" style="color:var(--muted)">Делаю один — отвечаю сам. От идеи до деплоя, от бота до админки.</p>
+        <div class="bar mt-5"><i data-w="96%"></i></div><div class="flex justify-between font-mono text-[11px] opacity-50 mt-2"><span>вовлечённость</span><span>96%</span></div>
+      </div>
+      <div class="glass spot tilt rounded-[28px] p-7 reveal reveal-d2">
+        <div class="font-mono text-[11px] tracking-[.18em] uppercase opacity-50">Опыт</div>
+        <h3 class="font-semibold text-[17px] mt-2">Junior → Middle</h3>
+        <p class="text-sm mt-2" style="color:var(--muted)">Тех-админ · MySQL · разработка · нейросети 2 года.</p>
+        <div class="flex flex-wrap gap-2 mt-3 text-[11px]"><span class="px-3 py-1.5 rounded-full font-medium" style="background:var(--text);color:var(--bg)">Python</span><span class="px-3 py-1.5 rounded-full glass">C#</span><span class="px-3 py-1.5 rounded-full glass">C++</span></div>
+      </div>
+      <div class="sm:col-span-2 glass rounded-[28px] p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-5 reveal">
+        <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full grid place-items-center shrink-0 border" style="border-color:var(--line);background:rgba(52,211,153,.12)"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400" style="animation:pulse-dot 2s infinite"></span></div>
+        <div><div class="font-semibold">Открыт к движам</div><div class="font-mono text-[12px] opacity-60">пиши в ТГ — отвечу сам, без ботов</div></div></div>
+        <a href="https://t.me/sell_program" target="_blank" class="rounded-full px-6 py-2.5 text-sm font-semibold btn-primary focus-ring cursor-pointer text-center">Написать Косте →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack" class="px-5 py-6 max-w-[1180px] mx-auto scroll-mt-28 relative" style="z-index:3">
+  <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+    <div><p class="font-mono text-[11px] tracking-[.22em] uppercase opacity-50">02 — Стек Кости</p>
+      <h2 class="font-serif text-[36px] sm:text-[46px] tracking-tight leading-[.95] mt-2">Чем <span class="italic opacity-70">живу</span> последние годы</h2></div>
+    <p class="max-w-[420px] text-sm leading-relaxed" style="color:var(--muted)">5 лет кода и 2 года с нейросетями. Не учусь «когда-нибудь», а делаю сейчас.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="glass spot tilt rounded-[24px] p-7 reveal">
+      <div class="w-11 h-11 rounded-2xl grid place-items-center text-[18px]" style="background:var(--text);color:var(--bg)">🐍</div>
+      <h3 class="font-semibold mt-5">Python · 5 лет</h3>
+      <p class="text-sm mt-2" style="color:var(--muted)">Скрипты, боты, автоматизация. Любимый инструмент — делаю быстрее всех.</p>
+      <div class="mt-4 text-[12px] font-mono"><div class="flex justify-between mb-1.5 opacity-70"><span>Python</span><span>95%</span></div><div class="bar"><i data-w="95%"></i></div></div>
+      <div class="mt-3 text-[12px] font-mono"><div class="flex justify-between mb-1.5 opacity-70"><span>Скрипты / Боты</span><span>92%</span></div><div class="bar"><i data-w="92%"></i></div></div>
+    </div>
+    <div class="glass spot tilt rounded-[24px] p-7 reveal reveal-d1">
+      <div class="w-11 h-11 rounded-2xl grid place-items-center glass font-mono text-[13px]">C++/C#</div>
+      <h3 class="font-semibold mt-5">C++ · C#</h3>
+      <p class="text-sm mt-2" style="color:var(--muted)">Когда нужна скорость и система. Понимаю память, ООП, архитектуру.</p>
+      <div class="mt-4 text-[12px] font-mono"><div class="flex justify-between mb-1.5 opacity-70"><span>C++</span><span>78%</span></div><div class="bar"><i data-w="78%"></i></div></div>
+      <div class="mt-3 text-[12px] font-mono"><div class="flex justify-between mb-1.5 opacity-70"><span>C#</span><span>82%</span></div><div class="bar"><i data-w="82%"></i></div></div>
+    </div>
+    <div class="glass spot tilt rounded-[24px] p-7 reveal reveal-d2">
+      <div class="w-11 h-11 rounded-2xl grid place-items-center glass">✦</div>
+      <h3 class="font-semibold mt-5">AI · 2 года</h3>
+      <p class="text-sm mt-2" style="color:var(--muted)">Нейросети не с 2024, а с детства. Генерация, код-ассистенты, автоматизация.</p>
+      <div class="mt-4 flex flex-wrap gap-2 text-[12px]"><span class="px-3 py-1.5 rounded-full glass">ChatGPT</span><span class="px-3 py-1.5 rounded-full glass">Muse</span><span class="px-3 py-1.5 rounded-full font-medium" style="background:var(--text);color:var(--bg)">Vibe-code</span></div>
+    </div>
+    <div class="glass spot tilt rounded-[24px] p-7 reveal">
+      <h4 class="font-mono text-[11px] tracking-[.18em] uppercase opacity-50">Админка</h4>
+      <div class="mt-4 space-y-3 text-[13px]">
+        <div class="flex justify-between"><span>MySQL Admin</span><span class="font-mono text-[11px] opacity-50">pro</span></div>
+        <div class="bar"><i data-w="88%"></i></div>
+        <div class="flex justify-between"><span>Tech Admin / DevOps lite</span><span class="font-mono text-[11px] opacity-50">mid</span></div>
+        <div class="bar"><i data-w="80%"></i></div>
+      </div>
+    </div>
+    <div class="glass spot tilt rounded-[24px] p-7 reveal reveal-d1 md:col-span-2">
+      <h4 class="font-mono text-[11px] tracking-[.18em] uppercase opacity-50">Как работаю</h4>
+      <div class="grid sm:grid-cols-3 gap-4 mt-4">
+        <div><div class="font-serif text-[17px]">01 · Чисто</div><p class="text-xs mt-1" style="color:var(--muted)">Код читаем, интерфейс дышит, ничего лишнего.</p></div>
+        <div><div class="font-serif text-[17px]">02 · Чётко</div><p class="text-xs mt-1" style="color:var(--muted)">Договорились — сделал. Без воды.</p></div>
+        <div><div class="font-serif text-[17px]">03 · Душевно</div><p class="text-xs mt-1" style="color:var(--muted)">Делаю как для себя — поэтому получается.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terminal" class="px-5 py-10 max-w-[1180px] mx-auto scroll-mt-28 relative" style="z-index:3">
+  <div class="glass rounded-[28px] overflow-hidden reveal noise relative">
+    <div class="flex items-center gap-2 px-5 py-3.5" style="border-bottom:1px solid var(--line)">
+      <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span><span class="w-3 h-3 rounded-full bg-[#FEBC2E]"></span><span class="w-3 h-3 rounded-full bg-[#28C840]"></span>
+      <span class="font-mono text-[12px] opacity-50 ml-2">kostya@wb3eqr: ~ — введи help</span>
+      <span class="ml-auto font-mono text-[11px] opacity-40 hidden sm:block">пасхалки внутри ↓</span>
+    </div>
+    <div class="grid lg:grid-cols-5">
+      <div class="lg:col-span-3 p-6 font-mono text-[13px] leading-[1.7]">
+        <div id="termOut"><div class="opacity-60">Kostya OS v4 — 15y · wb3eqr</div><div class="opacity-60">Набери <span class="px-1.5 rounded" style="background:rgba(128,128,140,.15)">help</span> и Enter.</div></div>
+        <div class="flex items-center gap-2 mt-3"><span style="color:#34d399">➜</span><span class="opacity-60">~</span><input id="termIn" autocomplete="off" spellcheck="false" placeholder="help" class="flex-1 bg-transparent outline-none placeholder:opacity-30 focus-ring rounded"></div>
+      </div>
+      <div class="lg:col-span-2 p-6 text-sm" style="border-left:1px solid var(--line);background:rgba(128,128,140,.05)">
+        <div class="font-mono text-[11px] tracking-[.18em] uppercase opacity-50">Пасхалки · <span id="eggCount">0/5</span></div>
+        <ul class="mt-3 space-y-2 font-mono text-[12px] opacity-70"><li>??? — Konami ↑↑↓↓←→←→BA</li><li>??? — тройной клик по «k»</li><li>??? — набери kostya</li><li>??? — кликни © 5 раз</li><li>??? — команда в терминале</li></ul>
+        <div class="mt-4 text-[12px] opacity-50">Собери 5/5 — почта станет золотой.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="px-5 py-6 max-w-[1180px] mx-auto scroll-mt-28 relative" style="z-index:3">
+  <div class="flex items-center justify-between mb-5"><h2 class="font-serif text-[30px] tracking-tight">Делал <span class="italic opacity-60">— избранное</span></h2><span class="font-mono text-[11px] uppercase opacity-40 hidden sm:block">клик = подробности</span></div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <article onclick="openModal(0)" class="glass spot tilt rounded-[24px] overflow-hidden group reveal focus-ring cursor-pointer">
+      <div class="h-[170px] relative overflow-hidden"><div class="absolute inset-0 transition duration-700 group-hover:scale-110" style="background:linear-gradient(135deg,#17171B,#26262C 45%,#0B0B0D)"></div>
+      <div class="absolute inset-0 grid place-items-center"><div class="glass rounded-2xl px-6 py-4 font-mono text-[11px] tracking-[.2em]">PYTHON · BOTS · SCRIPTS</div></div>
+      <span class="absolute top-4 left-4 font-mono text-[10px] px-3 py-1.5 rounded-full font-medium" style="background:var(--text);color:var(--bg)">5 YEARS →</span></div>
+      <div class="p-5"><h3 class="font-semibold">Скрипты и боты</h3><p class="text-[13px] mt-1" style="color:var(--muted)">Python — мой основной язык</p></div></article>
+    <article onclick="openModal(1)" class="glass spot tilt rounded-[24px] overflow-hidden group reveal reveal-d1 focus-ring cursor-pointer">
+      <div class="h-[170px] grid place-items-center relative overflow-hidden"><div class="absolute inset-0 transition duration-700 group-hover:scale-110" style="background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.14),transparent 60%),linear-gradient(135deg,#101014,#1C1C21)"></div><div class="relative font-mono text-[13px] glass rounded-2xl px-5 py-3">MySQL · ADMIN</div></div>
+      <div class="p-5"><h3 class="font-semibold">MySQL & Tech Admin</h3><p class="text-[13px] mt-1" style="color:var(--muted)">Базы, серверы, порядок</p></div></article>
+    <article onclick="openModal(2)" class="glass spot tilt rounded-[24px] overflow-hidden group reveal reveal-d2 focus-ring cursor-pointer sm:col-span-2 lg:col-span-1">
+      <div class="h-[170px] grid place-items-center relative overflow-hidden"><div class="absolute inset-0 transition duration-700 group-hover:scale-110" style="background:linear-gradient(135deg,#0E1A1F,#1A2830 60%,#0A0A0B)"></div><div class="relative glass rounded-full w-16 h-16 grid place-items-center">✦</div><span class="absolute top-3 left-3 font-mono text-[10px] px-2.5 py-1 rounded-full glass">AI 2 YEARS</span></div>
+      <div class="p-5"><h3 class="font-semibold">AI · Вайбкодинг</h3><p class="text-[13px] mt-1" style="color:var(--muted)">Нейросети как часть workflow</p></div></article>
+  </div>
+</section>
+
+<section id="contact" class="px-5 py-10 max-w-[1180px] mx-auto scroll-mt-28 relative" style="z-index:3">
+  <div class="glass rounded-[32px] p-6 sm:p-10 lg:p-12 relative overflow-hidden noise reveal">
+    <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="font-mono text-[11px] tracking-[.22em] uppercase opacity-50">04 — Связь · Костя</p>
+        <h2 class="font-serif text-[38px] sm:text-[52px] leading-[.9] tracking-tight mt-3">Пиши —<br><span class="italic opacity-70">отвечу сам</span></h2>
+        <p class="text-[14px] leading-relaxed mt-4" style="color:var(--muted)">Лучше всего — Телеграм. Но почта, дискорд и гитхаб тоже на связи.</p>
+        <div class="mt-7 grid gap-3">
+          <a href="https://t.me/sell_program" target="_blank" class="group flex items-center justify-between glass rounded-2xl px-4 py-3.5 hover:brightness-125 transition focus-ring cursor-pointer">
+            <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl grid place-items-center shrink-0" style="background:#229ED9;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-7.8 16.4L3 22l3.7-1.2A10 10 0 0 0 22 12 10 10 0 0 0 12 2Zm5.2 7.1-1.6 7.6s-.2.6-.7.3l-2.2-1.6-1.1 1s-.1.2-.3.2l.4-2.6 4.6-4.2s.4-.4 0-.6-.6.1-.6.1L9 14.3l-2.6-.8s-.4-.1-.4-.4.4-.3.4-.3l10-3.9s.4-.2.8.2c.2.3 0 .6 0 .6Z"/></svg></div>
+            <div><div class="font-semibold text-sm">Telegram — @sell_program</div><div class="font-mono text-[11px] opacity-50">пишу лично · быстро</div></div></div><span class="text-sm opacity-40 group-hover:opacity-80">↗</span>
+          </a>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="https://t.me/hello_my_super_bio" target="_blank" class="glass rounded-2xl px-4 py-3 flex items-center justify-between hover:brightness-125 transition focus-ring cursor-pointer"><div><div class="font-mono text-[12px] font-medium">Канал</div><div class="font-mono text-[11px] opacity-50">hello_my_super_bio</div></div><span>↗</span></a>
+            <button data-copy-ds class="glass rounded-2xl px-4 py-3 flex items-center justify-between hover:brightness-125 transition focus-ring cursor-pointer text-left"><div><div class="font-mono text-[12px] font-medium">Discord</div><div class="font-mono text-[11px] opacity-50">ws3eqr_11211</div></div><span class="text-[11px] opacity-40">копировать</span></button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="https://github.com/wb3eqr" target="_blank" class="glass rounded-2xl px-4 py-3 flex items-center justify-between hover:brightness-125 transition focus-ring cursor-pointer"><div class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5a9 9 0 0 0-2.85 17.55c.45.08.62-.19.62-.43v-1.54c-2.52.55-3.05-1.07-3.05-1.07-.41-1.05-1.01-1.33-1.01-1.33-.83-.57.06-.56.06-.56.92.06 1.41.95 1.41.95.82 1.4 2.14 1 2.67.76.08-.59.32-1 .58-1.23-2.02-.23-4.14-1.01-4.14-4.49 0-.99.35-1.8.93-2.44-.09-.23-.4-1.15.09-2.4 0 0 .76-.24 2.5.93a8.7 8.7 0 0 1 4.55 0c1.73-1.17 2.49-.93 2.49-.93.49 1.25.18 2.17.09 2.4.58.64.92 1.45.92 2.44 0 3.49-2.12 4.26-4.15 4.49.33.29.62.85.62 1.72v2.55c0 .24.16.52.62.43A9 9 0 0 0 12 2.5Z"/></svg><span class="font-mono text-[12px] font-medium">GitHub</span></div><span class="font-mono text-[11px] opacity-50">wb3eqr ↗</span></a>
+            <button data-copy-steam class="glass rounded-2xl px-4 py-3 flex items-center justify-between hover:brightness-125 transition focus-ring cursor-pointer text-left"><div><div class="font-mono text-[12px] font-medium">Steam</div><div class="font-mono text-[11px] opacity-50">722286661</div></div><span class="text-[11px] opacity-40">копировать</span></button>
+          </div>
+          <button data-copy class="glass rounded-2xl px-4 py-3 flex items-center justify-between hover:brightness-125 transition focus-ring cursor-pointer text-left w-full"><div class="min-w-0"><div class="font-mono text-[12px] font-medium">Почта</div><div id="bigEmail" class="font-mono text-[12px] sm:text-[13px] break-all">hellomyworld@xyecoc.com</div></div><span class="text-[11px] opacity-40 shrink-0 ml-3">копировать</span></button>
+        </div>
+        <div class="font-mono text-[11px] opacity-40 mt-5">шорткаты: <span class="hint-kbd">⌘K</span> · <span class="hint-kbd">G</span> глитч · <span class="hint-kbd">M</span> matrix</div>
+      </div>
+      <form onsubmit="event.preventDefault();toast('Улетело на hellomyworld@xyecoc.com — отвечу сам!');blip(660);burst(innerWidth/2,innerHeight/2);" class="rounded-[24px] p-6 glass">
+        <h3 class="font-semibold">Быстро написать</h3>
+        <p class="text-[12px] opacity-50 mt-1">Демо-форма — дублирует на почту</p>
+        <input required placeholder="Имя — Костя увидит" class="mt-4 w-full rounded-xl px-4 py-3 text-sm focus-ring" style="background:rgba(128,128,140,.1);border:1px solid var(--line)">
+        <input required type="email" placeholder="Твоя почта" class="mt-3 w-full rounded-xl px-4 py-3 text-sm focus-ring" style="background:rgba(128,128,140,.1);border:1px solid var(--line)">
+        <textarea rows="3" placeholder="Что хочешь сделать? Скрипт, бот, админка?" class="mt-3 w-full rounded-xl px-4 py-3 text-sm resize-none focus-ring" style="background:rgba(128,128,140,.1);border:1px solid var(--line)"></textarea>
+        <button class="mt-4 w-full rounded-full py-3.5 text-sm font-semibold btn-primary focus-ring cursor-pointer">Отправить Косте →</button>
+        <p class="text-[11px] opacity-40 text-center mt-2">TG быстрее: <a href="https://t.me/sell_program" target="_blank" class="underline">@sell_program</a></p>
+      </form>
+    </div>
+  </div>
+  <footer class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8 text-[13px] opacity-60">
+    <div class="flex items-center gap-2.5 min-w-0"><span class="w-7 h-7 rounded-full grid place-items-center font-mono text-[10px] shrink-0" style="background:var(--text);color:var(--bg)">k</span>
+    <button id="copyRight" class="font-mono text-[10px] sm:text-[11px] tracking-[.16em] uppercase focus-ring cursor-pointer hover:opacity-80 text-left leading-tight">kostya · wb3eqr © 2026 · кликни 5 раз 🎁</button></div>
+    <div class="font-mono text-[11px] uppercase shrink-0">пасхалок <span id="eggCount2">0/5</span> · v4</div>
+  </footer><div class="h-16 sm:h-20"></div>
+</section>
+
+<div id="modal" class="hidden fixed inset-0 z-[75] grid place-items-center p-5" style="background:rgba(0,0,0,.6);backdrop-filter:blur(12px)">
+  <div class="glass rounded-[28px] max-w-[520px] w-full p-8 relative">
+    <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 grid place-items-center rounded-full glass cursor-pointer">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div id="palette" class="hidden fixed inset-0 z-[75] p-5" style="background:rgba(0,0,0,.55)" onclick="if(event.target===this)togglePalette()">
+  <div class="glass rounded-[24px] max-w-[480px] mx-auto mt-[12vh] p-3">
+    <input id="palIn" placeholder="Куда? about / stack / contact / party…" class="w-full rounded-2xl px-4 py-3.5 text-sm bg-transparent outline-none font-mono" oninput="filterPal(this.value)">
+    <div id="palList" class="mt-2 text-sm"></div>
+  </div>
+</div>
+
+<div id="cc" class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 sm:left-auto sm:right-5 sm:translate-x-0 z-[60] w-[min(384px,calc(100%-20px))]">
+  <div class="glass rounded-[28px] p-5" style="box-shadow:0 24px 70px rgba(0,0,0,.5)">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl grid place-items-center" style="background:var(--text);color:var(--bg)">⚙</div>
+      <div><div class="font-semibold text-sm">Control Center</div><div class="font-mono text-[11px] opacity-50">iPhone glass · звук <button id="soundBtn" class="underline cursor-pointer">вкл</button></div></div></div>
+      <button onclick="toggleCC(true)" class="w-8 h-8 grid place-items-center rounded-full glass cursor-pointer">✕</button>
+    </div>
+    <div class="font-mono text-[10px] uppercase opacity-40 mt-4 mb-2 tracking-[.18em]">Пресет</div>
+    <div class="grid grid-cols-4 gap-2" id="presets">
+      <button data-p="air" class="preset glass rounded-2xl py-3 text-[12px] cursor-pointer">Air</button>
+      <button data-p="glass" class="preset glass rounded-2xl py-3 text-[12px] active cursor-pointer">Glass</button>
+      <button data-p="frost" class="preset glass rounded-2xl py-3 text-[12px] cursor-pointer">Frost</button>
+      <button data-p="deep" class="preset glass rounded-2xl py-3 text-[12px] cursor-pointer">Deep</button>
+    </div>
+    <div class="glass rounded-2xl p-4 mt-3">
+      <div class="flex justify-between text-[13px] font-medium"><span>Прозрачность</span><span id="oVal" class="font-mono text-[12px] opacity-60">07%</span></div>
+      <input id="oRange" type="range" min="2" max="20" value="7" class="range w-full mt-3">
+      <div class="flex justify-between text-[13px] font-medium mt-4"><span>Блюр</span><span id="bVal" class="font-mono text-[12px] opacity-60">28px</span></div>
+      <input id="bRange" type="range" min="0" max="44" value="28" class="range w-full mt-3">
+    </div>
+    <div class="grid grid-cols-3 gap-2 mt-3">
+      <button id="themeBtn" class="glass rounded-2xl p-3.5 text-left cursor-pointer"><div>◐</div><div class="text-[13px] font-medium">Тема</div><div id="themeLabel" class="font-mono text-[11px] opacity-60">Тёмная</div></button>
+      <button id="motionBtn" class="glass rounded-2xl p-3.5 text-left cursor-pointer"><div>✦</div><div class="text-[13px] font-medium">Motion</div><div id="motionLabel" class="font-mono text-[11px] opacity-60">Вкл</div></button>
+      <button onclick="party(6000);toggleCC(true)" class="glass rounded-2xl p-3.5 text-left cursor-pointer"><div>🎉</div><div class="text-[13px] font-medium">Party</div><div class="font-mono text-[11px] opacity-60">kostya</div></button>
+    </div>
+  </div>
+</div>
+<button onclick="toggleCC()" class="fixed bottom-5 left-5 z-40 hidden sm:grid place-items-center w-12 h-12 rounded-full glass cursor-pointer" aria-label="cc">⚙</button>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 glass rounded-full px-5 py-3 text-[13px] font-medium translate-y-24 opacity-0 transition duration-300 z-[80] pointer-events-none whitespace-nowrap max-w-[calc(100%-24px)]">ok</div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const bootMsgs=['загружаю стек…','компилю вайб…','чищу пиксели…','kostya mode: on'];let bi=0;const bt=setInterval(()=>{const e=$('#bootMsg');if(e)e.textContent=bootMsgs[bi=(bi+1)%bootMsgs.length];},300);setTimeout(()=>{$('#boot').classList.add('done');clearInterval(bt);},1350);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.remove('translate-y-24','opacity-0');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.add('translate-y-24','opacity-0'),2400);}
+let soundOn=(localStorage.getItem('wb3eqr_sound')!=='off');function blip(f=520,d=.09){if(!soundOn)return;try{const C=window._AC||(window._AC=new (window.AudioContext||window.webkitAudioContext)());const o=C.createOscillator(),g=C.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.12,C.currentTime);g.gain.exponentialRampToValueAtTime(.001,C.currentTime+d);o.connect(g);g.connect(C.destination);o.start();o.stop(C.currentTime+d);}catch{}}
+const sb=$('#soundBtn'); if(sb)sb.addEventListener('click',e=>{soundOn=!soundOn;localStorage.setItem('wb3eqr_sound',soundOn?'on':'off');e.target.textContent=soundOn?'вкл':'выкл';blip(700);}); if(sb&&!soundOn)sb.textContent='выкл';
+function tick(){const d=new Date(),p=n=>String(n).padStart(2,'0');const c=$('#clock');if(c)c.textContent=`${p(d.getUTCHours())}:${p(d.getUTCMinutes())} UTC`;}tick();setInterval(tick,15000);
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;$('#progress').style.width=p+'%';$('#island').classList.toggle('scrolled',scrollY>40);},{passive:true});
+const cv=$('#dust'),ctx=cv.getContext('2d');let P=[],B=[];function size(){cv.width=innerWidth;cv.height=innerHeight;}size();addEventListener('resize',size);
+for(let i=0;i<70;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.4,s:Math.random()*.35+.08,o:Math.random()*.5+.15});
+function burst(x,y,n=46){const cols=['#fff','#A5B4FC','#6EE7B7','#FDBA74','#F472B6'];for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,v=Math.random()*6+2;B.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,l:1,c:cols[i%cols.length],r:Math.random()*3+2});}blip(760,.12);setTimeout(()=>blip(980,.12),90);}
+(function loop(){ctx.clearRect(0,0,cv.width,cv.height);P.forEach(p=>{p.y-=p.s;if(p.y<-4){p.y=innerHeight+4;p.x=Math.random()*innerWidth;}ctx.globalAlpha=p.o;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();});ctx.globalAlpha=1;B=B.filter(b=>b.l>0);B.forEach(b=>{b.x+=b.vx;b.y+=b.vy;b.vy+=.18;b.l-=.016;ctx.globalAlpha=Math.max(0,b.l);ctx.fillStyle=b.c;ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,7);ctx.fill();});ctx.globalAlpha=1;if(!document.documentElement.classList.contains('no-motion'))requestAnimationFrame(loop);else setTimeout(loop,300);})();
+addEventListener('pointerdown',e=>{if(e.target.closest('input,textarea'))return;const s=document.createElement('span');s.className='ripple';s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),650);});
+const roles=['Vibe Coder','Python 5 years','C++ / C#','AI 2 years','MySQL Admin','Tech Admin'];let ri=0,ci=0,del=false;(function type(){const el=$('#role');if(!el)return;const w=roles[ri];el.textContent=w.slice(0,ci);if(!del){ci++;if(ci>w.length){del=true;return setTimeout(type,1300);}}else{ci--;if(ci===0){del=false;ri=(ri+1)%roles.length;}}setTimeout(type,del?36:70);})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('.bar>i').forEach(b=>b.style.width=b.dataset.w);if(e.target.hasAttribute('data-count')){const t=+e.target.dataset.count;let s=0;const st=setInterval(()=>{s+=Math.max(1,Math.round(t/38));if(s>=t){s=t;clearInterval(st);}e.target.textContent=s;},38);io.unobserve(e.target);}}),{threshold:.15});
+$$('.reveal,.bar').forEach(el=>io.observe(el));$$('[data-count]').forEach(el=>io.observe(el));
+$$('.spot').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');}));
+if(matchMedia('(pointer:fine)').matches){$$('.tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateX(${-y*5}deg) rotateY(${x*6}deg) translateY(-2px)`;});c.addEventListener('mouseleave',()=>c.style.transform='');});}
+const glow=$('#cursorGlow');addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';},{passive:true});
+$$('[data-copy]').forEach(b=>b.addEventListener('click',async e=>{try{await navigator.clipboard.writeText('hellomyworld@xyecoc.com');}catch{}toast('Почта скопирована — hellomyworld@xyecoc.com');burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2,60);}));
+$('#copyEmailNav')?.addEventListener('click',async e=>{try{await navigator.clipboard.writeText('hellomyworld@xyecoc.com');}catch{}toast('hellomyworld@xyecoc.com — в буфере');burst(e.clientX,e.clientY,40);});
+document.querySelector('[data-copy-ds]')?.addEventListener('click',async e=>{try{await navigator.clipboard.writeText('ws3eqr_11211');}catch{}toast('Discord скопирован — ws3eqr_11211');burst(e.clientX,e.clientY,40);});
+document.querySelector('[data-copy-steam]')?.addEventListener('click',async e=>{try{await navigator.clipboard.writeText('722286661');}catch{}toast('Steam код скопирован — 722286661');burst(e.clientX,e.clientY,40);});
+const mods=[{t:'Python — скрипты и боты',d:'5 лет на Python. Боты для ТГ/Дискорда, парсеры, автоматизация, скрипты под ключ. Делаю быстро и чисто — код читаем, работает стабильно. Хочешь так же? Пиши Косте в ТГ @sell_program.'},{t:'MySQL & Tech Admin',d:'Админил MySQL, поднимал серверы, настраивал доступы и бэкапы. Понимаю, как всё крутится под капотом — от БД до деплоя.'},{t:'AI · 2 года вайбкодинга',d:'Юзаю нейросети 2 года — не хайп, а рабочий инструмент. Генерация, помощь в коде, ии-фичи в продуктах. Делаю сам, для души, но на уровне.'}];
+function openModal(i){$('#modalBody').innerHTML=`<div class="font-mono text-[11px] tracking-[.2em] uppercase opacity-50">Кейс 0${i+1}</div><h3 class="font-serif text-[26px] mt-2">${mods[i].t}</h3><p class="text-sm mt-3 leading-relaxed opacity-70">${mods[i].d}</p><div class="flex gap-2 mt-5 flex-wrap"><a href="https://t.me/sell_program" target="_blank" class="rounded-full px-5 py-2.5 text-sm font-semibold btn-primary">Написать Косте →</a><button onclick="closeModal()" class="glass rounded-full px-5 py-2.5 text-sm">Закрыть</button></div>`;$('#modal').classList.remove('hidden');blip(600);}
+function closeModal(){$('#modal').classList.add('hidden');}
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
+const palItems=[['Обо мне →','#about'],['Стек →','#stack'],['Терминал →','#terminal'],['Связь →','#contact'],['GitHub →','https://github.com/wb3eqr'],['Telegram →','https://t.me/sell_program'],['Party →','party'],['Matrix →','matrix']];
+function renderPal(f=''){$('#palList').innerHTML=palItems.filter(([t])=>t.toLowerCase().includes(f.toLowerCase())).map(([t,h])=>`<button onclick="goPal('${h}')" class="w-full text-left px-4 py-3 rounded-2xl hover:bg-white/10 font-mono text-[13px] transition">${t}</button>`).join('')||'<div class="px-4 py-3 opacity-40 font-mono text-[13px]">ничего…</div>';}
+function togglePalette(force){const p=$('#palette');const show=force!==undefined?force:p.classList.contains('hidden');p.classList.toggle('hidden',!show);if(show){renderPal();setTimeout(()=>$('#palIn').focus(),50);}$('#palIn').value='';}
+function filterPal(v){renderPal(v);}
+function goPal(h){togglePalette(false);if(h==='party')return party(6000);if(h==='matrix')return matrixMode();if(h.startsWith('http'))return window.open(h,'_blank');document.querySelector(h)?.scrollIntoView({behavior:'smooth'});}
+addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();togglePalette();}if(e.key==='Escape'){togglePalette(false);closeModal();$('#matrix').classList.remove('on');}});
+function toggleCC(f){const c=$('#cc');if(f===true){c.classList.add('hidden');return;}c.classList.toggle('hidden');}
+function setFill(r){r.style.setProperty('--fill',(r.value-r.min)/(r.max-r.min)*100+'%');}
+const oR=$('#oRange'),bR=$('#bRange');function applyGlass(o,b,save=true){document.documentElement.style.setProperty('--glass-opacity',o/100);document.documentElement.style.setProperty('--glass-blur',b+'px');document.documentElement.style.setProperty('--glass-border',Math.min(.2,o/100+.03));$('#oVal').textContent=String(o).padStart(2,'0')+'%';$('#bVal').textContent=b+'px';if(save)localStorage.setItem('wb3eqr_glass',JSON.stringify({o,b}));}
+[oR,bR].forEach(setFill);oR.oninput=()=>{setFill(oR);applyGlass(+oR.value,+bR.value);markP(null);};bR.oninput=()=>{setFill(bR);applyGlass(+oR.value,+bR.value);markP(null);};
+const PR={air:[3,14],glass:[7,28],frost:[12,36],deep:[16,20]};function markP(n){$$('#presets .preset').forEach(b=>b.classList.toggle('active',b.dataset.p===n));}
+$$('#presets .preset').forEach(b=>b.onclick=()=>{const[o2,b2]=PR[b.dataset.p];oR.value=o2;bR.value=b2;[oR,bR].forEach(setFill);applyGlass(o2,b2);markP(b.dataset.p);blip(540);});
+try{const g=JSON.parse(localStorage.getItem('wb3eqr_glass'));if(g){oR.value=g.o;bR.value=g.b;[oR,bR].forEach(setFill);applyGlass(g.o,g.b,false);}}catch{}
+let dark=localStorage.getItem('wb3eqr_theme')!=='light';function setTheme(d){dark=d;document.documentElement.classList.toggle('dark',d);document.documentElement.classList.toggle('light',!d);$('#themeLabel').textContent=d?'Тёмная':'Светлая';localStorage.setItem('wb3eqr_theme',d?'dark':'light');}setTheme(dark);$('#themeBtn').onclick=()=>{setTheme(!dark);blip(dark?420:640);};
+let motion=true;$('#motionBtn').onclick=()=>{motion=!motion;document.documentElement.classList.toggle('no-motion',!motion);$('#motionLabel').textContent=motion?'Вкл':'Выкл';}; if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('no-motion');motion=false;$('#motionLabel').textContent='Выкл';}
+let eggs=new Set(JSON.parse(localStorage.getItem('wb3eqr_eggs')||'[]'));function paintEggs(){$$('#eggDots .egg-dot').forEach((d,i)=>d.classList.toggle('found',eggs.has(i+1)));$('#eggCount').textContent=`${eggs.size}/5`;$('#eggCount2').textContent=`${eggs.size}/5`;if(eggs.size===5){const be=$('#bigEmail');be.style.background='linear-gradient(180deg,#FDE68A,#F59E0B)';be.style.webkitBackgroundClip='text';be.style.backgroundClip='text';}}paintEggs();
+function egg(n,name){if(eggs.has(n))return;eggs.add(n);localStorage.setItem('wb3eqr_eggs',JSON.stringify([...eggs]));paintEggs();toast(`🥚 Пасхалка ${eggs.size}/5: ${name}`);burst(innerWidth/2,innerHeight/3,80);blip(880,.15);setTimeout(()=>blip(1180,.2),120);}
+function party(ms=6000){document.documentElement.classList.add('party');burst(innerWidth/2,innerHeight/2,120);setTimeout(()=>document.documentElement.classList.remove('party'),ms);}
+const seq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let ki=0;addEventListener('keydown',e=>{const k=e.key.length===1?e.key.toLowerCase():e.key;if(k===seq[ki]){ki++;if(ki===seq.length){ki=0;egg(1,'Konami! Олдскул');party(8000);}}else ki=k===seq[0]?1:0;if(e.key.toLowerCase()==='g'&&!e.metaKey&&!e.ctrlKey&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA')glitchTitle();if(e.key.toLowerCase()==='m'&&!e.metaKey&&document.activeElement.tagName!=='INPUT')matrixMode();});
+let buf='';addEventListener('keypress',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;buf=(buf+e.key).slice(-6);if(buf.includes('kostya')||buf.slice(-3)==='eqr'){egg(3,'Ты напечатал моё имя');party(7000);toast('kostya-mode: PARTY 🎉');buf='';}});
+let clicks=[];$('#logoBtn').addEventListener('click',e=>{clicks.push(Date.now());clicks=clicks.filter(t=>Date.now()-t<700);burst(e.clientX,e.clientY,25);blip(500+clicks.length*150);if(clicks.length>=3){clicks=[];egg(2,'Тройной клик по k');matrixMode();}});
+let fc=0;$('#copyRight').addEventListener('click',()=>{fc++;if(fc>=5){fc=0;egg(4,'Докликал футер');document.querySelector('#terminal').scrollIntoView({behavior:'smooth'});setTimeout(()=>$('#termIn').focus(),700);toast('Терминал ждёт ↓');}});
+function glitchTitle(){const t=$('#heroTitle');t.classList.remove('glitching');void t.offsetWidth;t.classList.add('glitching');blip(300,.08);}
+let mRun=false;function matrixMode(){const m=$('#matrix');m.classList.add('on');egg(2,'Matrix');const c=$('#matrixCanvas'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const cols='kostya wb3eqr 01'.split('');const fs=16;let drops=Array(Math.floor(c.width/fs)).fill(1);if(mRun)return;mRun=true;(function draw(){if(!m.classList.contains('on')){mRun=false;return;}x.fillStyle='rgba(0,0,0,.08)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0f0';x.font=fs+'px monospace';drops.forEach((y,i)=>{x.fillText(cols[Math.floor(Math.random()*cols.length)],i*fs,y*fs);if(y*fs>c.height&&Math.random()>.975)drops[i]=0;drops[i]++;});setTimeout(()=>requestAnimationFrame(draw),50);})();setTimeout(()=>m.classList.remove('on'),6000);blip(200,.3);}
+const out=$('#termOut'),inp=$('#termIn');function print(t,op=.85){const d=document.createElement('div');d.textContent=t;d.style.opacity=op;d.className='term-line';out.appendChild(d);out.parentElement.scrollTop=9999;}
+inp.addEventListener('keydown',e=>{if(e.key!=='Enter')return;const raw=inp.value.trim();print('➜ ~ '+raw,1);inp.value='';runCmd(raw.toLowerCase());});
+function runCmd(c){const [cmd]=c.split(' ');if(cmd==='help')print('команды: whoami · stack · contact · kostya · party · matrix · hello · clear');else if(cmd==='whoami')print('Костя — 15 · wb3eqr · 5 лет кода · Python/C++/C# · AI 2 года · MySQL · Tech Admin');else if(cmd==='stack')print('Python 5y · C++ · C# · MySQL · AI 2y · vibe-coding · junior→middle');else if(cmd==='contact')print('TG @sell_program · канал @hello_my_super_bio · DS ws3eqr_11211 · GH wb3eqr · Steam 722286661 · mail hellomyworld@xyecoc.com');else if(cmd==='kostya'){print('привет, это я — Костя. делаю для души, чтобы было чётко и чисто.');egg(5,'Ты нашёл Костю');burst(innerWidth/2,innerHeight/2,70);}else if(cmd==='hello'){print('hello, my world ☾');egg(5,'hello my world');burst(innerWidth/2,innerHeight/2,70);}else if(cmd==='party'){egg(3,'Party из терминала');party(7000);print('party 7s…');}else if(cmd==='matrix'){matrixMode();print('wake up, neo…');}else if(cmd==='clear')out.innerHTML='';else if(cmd===''){}else print(`не знаю «${cmd}». help в помощь`);blip(440,.06);}
+$$('.magnetic').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.1}px,${(e.clientY-r.top-r.height/2)*.12}px)`;});b.addEventListener('mouseleave',()=>b.style.transform='');});
+console.log('%c kostya · wb3eqr ','background:#fff;color:#000;font-size:22px;font-weight:bold;border-radius:8px');
+console.log('%c15 лет · 5 лет кода · AI 2 года · TG @sell_program · GH wb3eqr','color:#888');
+</script>
+</body>
+</html>
